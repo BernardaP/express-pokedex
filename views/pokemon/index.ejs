@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="text-center">Favorite Pokemon</h1>
+  <p class="text-center">
+    <a href="/">Home</a>
+  </p>
+
+  <div class="well">
+
+  
+<% pokemon.forEach(function(poke){%> 
+  
+  <p><%= poke.name %> </p>
+  <p><%= poke.id %> </p>
+
+  <button> <a href="/pokemon/<%= poke.id %>">Details</a>
+  </button>
+
+<% }) %> 
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 class="text-center">Details Pokemon</h1>
+  <p class="text-center">
+    <a href="/">Home</a>
+  </p>
+
+  <div class="well">
+   
+
+    <p>Name: <%= pokeInfo.name %> </p>
+    <p>Weight: <%= pokeInfo.weight %></p>
+    <p>Height: <%= pokeInfo.height %></p>
+    <p>Species: <%= pokeInfo.species.name %></p>
+
+
+    <!-- // console.log("======Abilities: ", pokeInfo.abilities[0].ability.name)
+    // console.log("======Ability>>>", pokeInfo.abilities) -->
+
+    <p>Abilities: </p>
+    
+    <ul>
+      <% let pokeAbility = pokeInfo.abilities %> 
+        <!-- // console.log("======Ability#####", pokeAbility) -->
+        <%for (let i=0; i < pokeAbility.length; i++) {  %> 
+        <li> <%= pokeAbility[i].ability.name %> </li>
+        <% } %> 
+    </ul>
+      
+    <img src="<%= pokeInfo.sprites.front_shiny %>" alt=""> 
+
+  
+    
+
+  </div>
+</div>
