@@ -14,7 +14,7 @@
           
           <h2><%= poke.name.toUpperCase() %> </h2>          
           
-          <form method="POST" action="/pokemon/<% poke.id %>?_method=DELETE">
+          <form method="POST" action="/pokemon/<%= poke.id %>?_method=DELETE">
             <button class="btn btn-info">
               <a href="/pokemon/<%= poke.id %>">Details</a>
             </button>

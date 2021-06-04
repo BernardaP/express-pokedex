@@ -63,7 +63,7 @@ router.post('/', (req, res) => {
 });
 
 //DELETE /pokemon -delete an individual pokemon from the database
-router.post('/:id', (req, res)=> {
+router.delete('/:id', (req, res)=> {
   db.pokemon.destroy({
     where: {id: req.params.id}
   }).then(function(){
