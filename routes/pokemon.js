@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
       // console.log(pokemon.sprites.back_shiny)
       // console.log(pokemon.abilities[0].ability.name)
 
-      res.render('pokemon/show.ejs', {pokeInfo: pokemon})
+      res.render('pokemon/show', {pokeInfo: pokemon})
     }).catch((error)=> {
       console.log('Error: ', error)
     })

@@ -1,35 +1,52 @@
-<div class="container">
-  <h1 class="text-center">Details Pokemon</h1>
-  <p class="text-center">
-    <a href="/">Home</a>
-  </p>
-
-  <div class="well">
-   
-
-    <p>Name: <%= pokeInfo.name %> </p>
-    <p>Weight: <%= pokeInfo.weight %></p>
-    <p>Height: <%= pokeInfo.height %></p>
-    <p>Species: <%= pokeInfo.species.name %></p>
-
-
-    <!-- // console.log("======Abilities: ", pokeInfo.abilities[0].ability.name)
-    // console.log("======Ability>>>", pokeInfo.abilities) -->
-
-    <p>Abilities: </p>
-    
-    <ul>
-      <% let pokeAbility = pokeInfo.abilities %> 
-        <!-- // console.log("======Ability#####", pokeAbility) -->
-        <%for (let i=0; i < pokeAbility.length; i++) {  %> 
-        <li> <%= pokeAbility[i].ability.name %> </li>
-        <% } %> 
-    </ul>
-      
-    <img src="<%= pokeInfo.sprites.front_shiny %>" alt=""> 
-
+<div class="container show-container">
+  <div id="overlay"></div>
+  <div class="container fav-page-height">
+    <div class="row poke-banner">
+      <h1 class="text-center show-title"> Pokemon Details</h1>
+      <p class="text-center back-link">
+        <a href="/pokemon">Back to Favorites</a>
+      </p>
+    </div>
   
-    
-
+    <div id="card-bkg" class="card well clearfix">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= pokeInfo.id  %>.png" class="card-img-top col-sm-12 text-sm-center col-md-6 float-md-end mb-3 ms-md-3" alt="pokemon image"> 
+      <!-- <%= pokeInfo.sprites.front_shiny %> low resolution -->
+      <div class="card-body">
+        <h2 class="card-title"><%= pokeInfo.name.toUpperCase() %></h2>
+      </div>
+      <ul class="list-group list-group-flush float-md-start col-md-4">
+        <li class="list-group-item"> <span class="bold">ID: </span> <%= pokeInfo.id %> </li>
+        <li class="list-group-item textCap"><span class="bold"> Type: </span><%= pokeInfo.types[0].type.name %></li>
+        <li class="list-group-item textCap"><span class="bold"> Species:</span> <%= pokeInfo.species.name %></li>
+        <li class="list-group-item"><span class="bold"> Height:</span> <%= pokeInfo.height %> dc / <%= Math.round(pokeInfo.height/3.048) %> ft (approx)</li>
+        <li class="list-group-item"><span class="bold"> Weight:</span> <%= pokeInfo.weight %> hg / <%= Math.round(pokeInfo.weight/4.536) %> lb (approx)</li>
+        <li class="list-group-item textCap"><span class="bold">Abilities</span>
+          <ul>
+            <% let pokeAbility = pokeInfo.abilities %> 
+            <!-- // console.log("======Ability#####", pokeAbility) -->
+            <%for (let i=0; i < pokeAbility.length; i++) {  %> 
+              <li> <%= pokeAbility[i].ability.name %> </li>
+            <% } %> 
+          </ul>
+        </li>
+      </ul>
+      
+      <!-- <p>Weight: <%= pokeInfo.weight %></p>
+      <p>Height: <%= pokeInfo.height %></p>
+      <p>Species: <%= pokeInfo.species.name %></p> -->
+      
+      
+      <!-- // console.log("======Abilities: ", pokeInfo.abilities[0].ability.name)
+        // console.log("======Ability>>>", pokeInfo.abilities) -->
+        
+       
+        
+        
+          
+          
+          
+          
+          
+    </div>
   </div>
 </div>
