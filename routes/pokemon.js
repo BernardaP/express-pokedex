@@ -4,7 +4,7 @@ const db = require('../models');
 const methodOverride = require('method-override')
 const router = express.Router();
 
-//Midleware
+//Middleware
 router.use(methodOverride('_method'))
 
 
