@@ -1,21 +1,27 @@
-<div class="container">
-  <h1 class="text-center">Favorite Pokemon</h1>
-  <p class="text-center">
-    <a href="/">Home</a>
-  </p>
+<div class="container home-page">
+  <div id="overlay"></div>
 
-  <div class="well">
-
-  
-<% pokemon.forEach(function(poke){%> 
-  
-  <p><%= poke.name %> </p>
-  <p><%= poke.id %> </p>
-
-  <button> <a href="/pokemon/<%= poke.id %>">Details</a>
-  </button>
-
-  <form action="/pokemon/<"></form>
-<% }) %> 
-</div>
+  <div class="container fav-page-height">
+    <div class="row poke-banner">
+      <h1 class="text-center home-title">Favorite Pokemon</h1>
+      <p class="text-center back-link">
+        <a href="/">Back to Home</a>
+      </p>
+    </div>
+    <div class="row text-center fav-poke"> 
+      <% pokemon.forEach(function(poke){%> 
+        <div class="well col-sm-6 col-md-3">
+          
+          <h2><%= poke.name.toUpperCase() %> </h2>          
+          
+          <form method="POST" action="/pokemon/<% poke.id %>?_method=DELETE">
+            <button class="btn btn-info">
+              <a href="/pokemon/<%= poke.id %>">Details</a>
+            </button>
+            <button type="submit" class="btn btn-danger btn-font-size">Delete</button>
+          </form>
+        </div>
+      <% }) %> 
+    </div>
+  </div>
 </div>
