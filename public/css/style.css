@@ -1,0 +1,115 @@
+body {
+   background-color: #555;
+   /* background-image: url("/img/pokemon-bkgnd0.jpeg"); */
+   font-family: 'Baloo 2', cursive;
+   position: relative;
+    background-image: url("/img/pokemon-bkgnd0.jpeg");
+} 
+/* .home-page{
+    position: relative;
+    background-image: url("/img/pokemon-bkgnd0.jpeg");
+} */
+
+#overlay {
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0); 
+    opacity: 0.7;
+   
+}
+
+.poke-banner {
+    position: relative;
+}
+.home-page h2 {
+    color: white;
+}
+.home-title {
+    color: white;
+    font-size: 45px;
+}
+.home-subtitle a {
+    color: #f5b05d;
+    font-size: 30px;
+}
+.home-subtitle a:focus, a:hover {
+    color: #f3cd7c;
+}
+.fav-page-height{
+    height: 100vh;
+}
+.fav-poke a {
+    color: #333;
+    font-size: 16px;
+}
+.btn-font-size {
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.show-title {
+    padding: 30px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 45px;
+}
+.back-link a{
+    font-size: 20px;
+    color: #f5b05d;
+}
+.back-link a:focus, a:hover {
+    color: #f3cd7c;
+    
+}
+.bold {
+    font-weight: 700;
+}
+
+.textCap{
+    text-transform: capitalize;
+}
+#card-bkg{
+    background-color: rgb(255, 255, 255);
+    opacity: 0.98;
+}
+
+.well {
+    background-color: #555;
+    opacity: 0.9;
+
+}
+.card-title {
+    color:#cf2a2a;
+}
+.list-group-item {
+    background-color: #94ad92;
+    color: #333;
+}
+
+.list-group {
+    padding-right: 0;
+    font-size: 20px;
+}
+
+/* @media (min-width: 768px){
+    .container {
+        width: auto;
+    }
+} */
+
+/* @media (min-width: 992px){
+    .container {
+        width: auto;
+    }
+    .col-md-6 {
+        width: 60%;
+    }
+} */
