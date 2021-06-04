@@ -1,14 +1,18 @@
 const { default: axios } = require('axios');
-var express = require('express');
+const express = require('express');
 const db = require('../models');
-var router = express.Router();
+const methodOverride = require('method-override')
+const router = express.Router();
+
+//Midleware
+router.use(methodOverride('_method'))
+
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
   db.pokemon.findAll()
     .then(function(poke){
-
       res.render('pokemon/index.ejs', {pokemon: poke});
   } )
 });
@@ -33,7 +37,7 @@ router.get('/:id', (req, res) => {
       // console.log(pokemon.name)
       // console.log(pokemon.species.name)
       // console.log(pokemon.sprites.back_shiny)
-      console.log(pokemon.abilities[0].ability.name)
+      // console.log(pokemon.abilities[0].ability.name)
 
       res.render('pokemon/show.ejs', {pokeInfo: pokemon})
     }).catch((error)=> {
@@ -45,7 +49,7 @@ router.get('/:id', (req, res) => {
 
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) {
+router.post('/', (req, res) => {
   // TODO: Get form data and add a new record to DB
   
   db.pokemon.findOrCreate({
@@ -57,5 +61,14 @@ router.post('/', function(req, res) {
     res.redirect('/pokemon');
   })
 });
+
+//DELETE /pokemon -delete an individual pokemon from the database
+router.post('/:id', (req, res)=> {
+  db.pokemon.destroy({
+    where: {id: req.params.id}
+  }).then(function(){
+    res.redirect('/pokemon')
+  })
+})
 
 module.exports = router;
